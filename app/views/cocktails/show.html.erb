@@ -3,12 +3,20 @@
     <div class="col-sm-6 col-sm-offset-4">
       <h1><%= @cocktail.name %></h1>
       <ul>
-        <%= @cocktail.ingredients.each do |ingredient| %>
-        <li><%= ingredient.name %></li>
+        <% @cocktail.doses.each do |dose| %>
+        <li>Ingredient: <%= dose.ingredient.name %></li>
+           <p><%= dose.description  %></p>
+           <p><%= link_to "Delete this dose", dose_path(dose), method: :delete, class: "btn btn-primary" %></p>
         <% end %>
       </ul>
-      <h4><%= link_to "Back to Cocktails of the week", cocktails_path, class: "btn btn-primary" %></h4>
 
+      <h4>Add a dose</h4>
+        <%= simple_form_for [@cocktail, @dose] do |f| %>
+        <%= f.input :description %>
+        <%= f.association :ingredient %>
+        <%= f.submit class: "btn btn-primary" %>
+      <% end %>
+      <h4 class= "padded"><%= link_to "Back to Cocktails of the week", cocktails_path, class: "btn btn-primary" %></h4>
     </div>
   </div>
 </div>
