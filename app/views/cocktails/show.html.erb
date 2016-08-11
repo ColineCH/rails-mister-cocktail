@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-4">
+      <h1><%= @cocktail.name %></h1>
+      <ul>
+        <%= @cocktail.ingredients.each do |ingredient| %>
+        <li><%= ingredient.name %></li>
+        <% end %>
+      </ul>
+      <h4><%= link_to "Back to Cocktails of the week", cocktails_path, class: "btn btn-primary" %></h4>
+
+    </div>
+  </div>
+</div>
