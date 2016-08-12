@@ -7,13 +7,23 @@
 
 <div class="container">
   <div class="row">
-      <ul class= "list-unstyled">
+    <div class="col-xs-12 col-sm-4">
       <% @cocktails.each do |cocktail| %>
-        <li>
-          <h3><%= link_to cocktail.name, cocktail_path(cocktail) %></h3>
-        </li>
-      <% end %>
-      </ul>
+        <% if cocktail.photo? %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), image-url (cocktail.photo.path);">
+        <% else %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url("placeholder.jpg);">
+        <% end %>
+          <div class="card-category">Popular</div>
+          <div class="card-description">
+             <h2><%= cocktail.name %></h2>
+          </div>
+          <% link_to cocktail_path(cocktail), class: "card-link" %>
+        </div>
+    <% end %>
     </div>
   </div>
 </div>
+
+
+
