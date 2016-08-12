@@ -41,7 +41,7 @@ gem 'coffee-rails'
 #image-upload
 gem 'figaro'
 gem "cloudinary", "1.1.0"
-gem "attachinary", "1.3.1"
+gem "attachinary"
 gem "jquery-fileupload-rails"
 
 group :development, :test do
