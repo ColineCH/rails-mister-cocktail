@@ -222,7 +222,7 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   cloudinary (= 1.1.0)
-  coffee-rails (~> 4.2)
+  coffee-rails
   figaro
   font-awesome-sass
   jbuilder (~> 2.5)
