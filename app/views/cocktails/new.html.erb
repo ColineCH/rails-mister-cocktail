@@ -3,6 +3,7 @@
     <div class="col-sm-6 col-sm-offset-4">
         <%= simple_form_for @cocktail do |f| %>
         <%= f.input :name %>
+        <%= f.input :photo, as: :attachinary %>
         <%= f.submit class: "btn btn-danger" %>
       <% end %>
     </div>

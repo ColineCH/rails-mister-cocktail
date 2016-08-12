@@ -1,4 +1,4 @@
-<div class="banner">
+<div class="banner padded">
   <div class="banner-content">
     <h1>Coktails Mania</h1>
     <p>Very cool stuff</p>
@@ -7,8 +7,6 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
-      <h3 class="text-center"><%= link_to "Add a new cocktail", new_cocktail_path, class: "btn btn-danger" %></h3>
       <ul class= "list-unstyled">
       <% @cocktails.each do |cocktail| %>
         <li>
